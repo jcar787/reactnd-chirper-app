@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LoadingBar from 'react-redux-loading';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import Dashboard from './Dashboard';
@@ -10,7 +11,7 @@ class App extends Component {
   }
   render() {
     const { loading } = this.props;
-    return <div>{loading ? <div>No TL Yet</div> : <Dashboard />}</div>;
+    return <div>{loading ? <LoadingBar /> : <Dashboard />}</div>;
   }
 }
 
